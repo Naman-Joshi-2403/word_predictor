@@ -1,7 +1,7 @@
 import pandas as pd
 import os
 import re
-from dotenv import load_dotenv
+from config import config
 
 ####### Project Root path
 PROJECT_ROOT = os.path.abspath(
@@ -9,9 +9,9 @@ PROJECT_ROOT = os.path.abspath(
 )
 
 ####### Load Env variable
-load_dotenv(os.path.join(PROJECT_ROOT, "dev.env"))
-input_dataset = os.getenv("INPUT_DATA")
-clean_text_output =  os.getenv("CLEAN_TEXT_OUTPUT")
+config = config()
+input_dataset = config.INPUT_DATA
+clean_text_output =  config.CLEAN_TEXT_OUTPUT
 
 ####### Load Dataset in large text corpus
 df = pd.read_csv(os.path.join(PROJECT_ROOT, input_dataset))

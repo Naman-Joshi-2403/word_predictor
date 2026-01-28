@@ -1,15 +1,15 @@
 import spacy 
 from collections import Counter
 import pickle
-from dotenv import load_dotenv
+from config import config
 import os
 
 ########### load envirnment variable
 PROJECT_ROOT = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..")
 )
-load_dotenv(os.path.join(PROJECT_ROOT, "dev.env"))
-clear_text = os.getenv('CLEAN_TEXT_OUTPUT')
+config = config()
+clear_text = config.CLEAN_TEXT_OUTPUT
 
 ########### load small model 
 nlp = spacy.load("en_core_web_sm", disable=["ner", "parser", "tagger"])
