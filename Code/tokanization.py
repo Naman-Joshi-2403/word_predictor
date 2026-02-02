@@ -79,5 +79,5 @@ with open(os.path.join(vocab_dir, "word_to_index.pkl"), "wb") as file:
 with open(os.path.join(vocab_dir, "index_to_word.pkl"), "wb") as file:
     pickle.dump(index_to_word, file)
 
-with open(os.path.join(encoded_raw_text, "encoded_text.pkl"), "wb") as file:
+with open(os.path.join(vocab_dir, "encoded_text.pkl"), "wb") as file:
     pickle.dump(encoded_raw_text, file)
