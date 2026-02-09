@@ -14,12 +14,9 @@ clear_text = config.CLEAN_TEXT_OUTPUT
 ########### load small model 
 nlp = spacy.load("en_core_web_sm", disable=["ner", "parser", "tagger", "lemmatizer"])
 
-
-########### read clear text
+########### read clear text  x
 with open(os.path.join(PROJECT_ROOT, clear_text), 'r', encoding="utf-8") as file:
     raw_text = file.read()
-
-
 
 ########### Tokenization in chunks
 tokens = []
@@ -29,7 +26,6 @@ for i in range(0, len(raw_text), chunk_size):
     chunk = raw_text[i : i + chunk_size]
     doc= nlp(chunk)
     
-
     for token in doc:
         if token.is_space:
             continue
@@ -43,7 +39,6 @@ print("Vocabulary size (raw):", len(word_frequency))
 
 min_freq = config.MIN_FREQ
 filter_vocab = {word : freq for word, freq in word_frequency.items() if freq >= min_freq}
-    
 
 ######## Create vocab mapping
 pad_token = "<PAD>"
