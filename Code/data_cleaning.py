@@ -8,6 +8,7 @@ PROJECT_ROOT = os.path.abspath(
     os.path.join(os.path.dirname(__file__), "..")
 )
 
+
 ####### Load Env variable
 config = config()
 input_dataset = config.INPUT_DATA

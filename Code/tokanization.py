@@ -35,7 +35,6 @@ for i in range(0, len(raw_text), chunk_size):
 
 ######## Vocab
 word_frequency = Counter(tokens)
-print("Vocabulary size (raw):", len(word_frequency))
 
 min_freq = config.MIN_FREQ
 filter_vocab = {word : freq for word, freq in word_frequency.items() if freq >= min_freq}
