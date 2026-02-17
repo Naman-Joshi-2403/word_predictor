@@ -1,4 +1,5 @@
 env
 Doc
 bootcamp.txt
-/Model
+Model/word_pred_LSTM_model.h5
+Model/word_pred_LSTM_model.keras
